@@ -2,9 +2,9 @@
 Final exam, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Kathi Munoz.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import time
@@ -93,10 +93,34 @@ def problem3(point, circle1, circle2, window):
       :type window:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
+    circle1.attach_to(window)
+    circle2.attach_to(window)
+    point.attach_to(window)
 
+    line1 = rg.Line(point, circle1.center)
+    line1.color = circle1.fill_color
+    line1.attach_to(window)
+    line2 = rg.Line(circle1.center, circle2.center)
+    line2.color = circle1.fill_color
+    line2.attach_to(window)
+    line3 = rg.Line(circle2.center, point)
+    line3.color = circle1.fill_color
+    line3.attach_to(window)
+
+    line4 = rg.Line(line1.get_midpoint(), line2.get_midpoint())
+    line4.color = circle2.fill_color
+    line4.attach_to(window)
+    line5 = rg.Line(line2.get_midpoint(), line3.get_midpoint())
+    line5.color = circle2.fill_color
+    line5.attach_to(window)
+    line6 = rg.Line(line3.get_midpoint(), line1.get_midpoint())
+    line6.color = circle2.fill_color
+    line6.attach_to(window)
+
+    window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
