@@ -20,7 +20,7 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
     run_test_problem1a()
-    # run_test_problem1b()
+    run_test_problem1b()
 
 
 def run_test_problem1a():
@@ -179,9 +179,14 @@ def problem1b(numbers):
       :type numbers:  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    sum = 0
+    for k in range(len(numbers)//3):
+        sum = sum + numbers[k + (len(numbers)//3)]
+    return sum
+
 
 
 ###############################################################################
