@@ -20,7 +20,7 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
     run_test_problem2a()
-    # run_test_problem2b()
+    run_test_problem2b()
     # run_test_problem2c()
 
 
@@ -259,6 +259,14 @@ def problem2b(sequence):
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    num_to_remember = 0
+    for k in range(1, len(sequence)):
+        if abs(sequence[num_to_remember]) < abs(sequence[k]):
+            num_to_remember = k
+            print(num_to_remember)
+    return num_to_remember
+
+
 
 
 def run_test_problem2c():
